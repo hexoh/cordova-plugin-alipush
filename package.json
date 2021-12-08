@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-alipush",
+  "version": "1.0.0",
+  "description": "Cordova Alibaba Cloud Push Plugin",
+  "cordova": {
+    "id": "cordova-plugin-alipush",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexoh/cordova-plugin-alipush.git"
+  },
+  "keywords": [
+    "cordova",
+    "AliPush",
+    "Message",
+    "Push",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Allen He",
+  "license": "Apache 2.0 License",
+  "bugs": {
+    "url": "https://github.com/hexoh/cordova-plugin-alipush/issues"
+  },
+  "homepage": "https://github.com/hexoh/cordova-plugin-alipush#readme"
+}
