@@ -1,4 +1,4 @@
-package cordova-plugin-alipush;
+package org.apache.cordova.alipush;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
