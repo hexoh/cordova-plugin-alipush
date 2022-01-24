@@ -57,6 +57,7 @@
 
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/AliPush.java" target-dir="src/org/apache/cordova/alipush/" />
+        <source-file src="src/android/AliPushReceiver.java" target-dir="src/org/apache/cordova/alipush/" />
         <framework src="src/android/build-alipush.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
