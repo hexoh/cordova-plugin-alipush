@@ -43,6 +43,18 @@
                 <param name="android-package" value="org.apache.cordova.alipush" />
             </feature>
         </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+
+            
+
+            <!-- 【重要】 请将YOUR_ACCESS_ID修改为APP的appKey -->
+            <meta-data android:name="com.alibaba.app.appkey" android:value="YOUR_APP_KEY"/>
+            <!-- 【重要】 请将YOUR_APP_SECRET修改为APP的appSecret -->
+            <meta-data android:name="com.alibaba.app.appsecret" android:value="YOUR_APP_SECRET"/>
+        </config-file>
+
+
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/AliPush.java" target-dir="src/org/apache/cordova/alipush/" />
         <framework src="src/android/build-alipush.gradle" custom="true" type="gradleReference" />
