@@ -46,7 +46,19 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
 
-            
+            <!-- 消息接收监听器 -->
+            <receiver android:name="org.apache.cordova.alipush.AliPushReceiver" android:exported="false">
+                <!-- 为保证receiver安全，建议设置不可导出，如需对其他应用开放可通过android：permission进行限制 -->
+                <intent-filter>
+                    <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+                </intent-filter>
+                <intent-filter>
+                    <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+                </intent-filter>
+                <intent-filter>
+                    <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+                </intent-filter>
+            </receiver>
 
             <!-- 【重要】 请将YOUR_ACCESS_ID修改为APP的appKey -->
             <meta-data android:name="com.alibaba.app.appkey" android:value="YOUR_APP_KEY"/>

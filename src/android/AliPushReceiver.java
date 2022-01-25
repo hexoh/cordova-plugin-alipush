@@ -8,7 +8,7 @@ import com.alibaba.sdk.android.push.notification.CPushMessage;
 
 import java.util.Map;
 
-public class AliPushMessageReceiver extends MessageReceiver {
+public class AliPushReceiver extends MessageReceiver {
   // 消息接收部分的LOG_TAG
   public static final String REC_TAG = "AliPushReceiver";
 
