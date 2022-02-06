@@ -64,6 +64,14 @@
             <meta-data android:name="com.alibaba.app.appkey" android:value="YOUR_APP_KEY"/>
             <!-- 【重要】 请将YOUR_APP_SECRET修改为APP的appSecret -->
             <meta-data android:name="com.alibaba.app.appsecret" android:value="YOUR_APP_SECRET"/>
+
+            <!-- 请填写你自己华为平台上注册的appid -->
+            <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=xxxx" />
+
+            <!-- 请填写您自己的vivo平台上的appKey -->
+            <meta-data android:name="com.vivo.push.api_key" android:value="xxxxxxxxxxxxxxxxxxx" />
+            <!-- 请填写您自己的vivo平台上的appId -->
+            <meta-data android:name="com.vivo.push.app_id" android:value="xxxx" />
         </config-file>
 
 
