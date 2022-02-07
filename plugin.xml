@@ -29,6 +29,8 @@
     <js-module name="AliPush" src="www/AliPush.js">
         <clobbers target="cordova.plugins.AliPush" />
     </js-module>
+
+    <!-- ios -->
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="AliPush">
@@ -37,6 +39,8 @@
         </config-file>
         <source-file src="src/ios/AliPush.m" />
     </platform>
+
+    <!-- android -->
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="AliPush">
@@ -74,8 +78,6 @@
             <meta-data android:name="com.vivo.push.app_id" android:value="xxxx" />
         </config-file>
 
-
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/AliPush.java" target-dir="src/org/apache/cordova/alipush/" />
         <source-file src="src/android/AliPushReceiver.java" target-dir="src/org/apache/cordova/alipush/" />
         <framework src="src/android/build-alipush.gradle" custom="true" type="gradleReference" />
