@@ -54,7 +54,7 @@ public class AliPush extends CordovaPlugin {
           @Override
           public void onSuccess(String s) {
             Log.d(AliPush_TAG, "bindAccount '" + account + "' success: " + s);
-            callbackContext.success("bindAccount '" + account + "' success: " + s);
+            callbackContext.success("bindAccount '" + account + "' success");
           }
 
           @Override
@@ -81,7 +81,7 @@ public class AliPush extends CordovaPlugin {
           @Override
           public void onSuccess(String s) {
             Log.d(AliPush_TAG, "unbindAccount success: " + s);
-            callbackContext.success("unbindAccount success: " + s);
+            callbackContext.success("unbindAccount success");
           }
 
           @Override

@@ -40,7 +40,7 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="AliPush">
-                <param name="android-package" value="org.apache.cordova.alipush" />
+                <param name="android-package" value="org.apache.cordova.alipush.AliPush" />
             </feature>
         </config-file>
 
