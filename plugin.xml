@@ -30,6 +30,12 @@
         <clobbers target="cordova.plugins.AliPush" />
     </js-module>
 
+    <preference name="APP_KEY" default="YOUR_APP_KEY" />
+    <preference name="APP_SECRET" default="YOUR_APP_SECRET" />
+    <preference name="HUAWEI_APP_ID" default="HUAWEI_APP_ID" />
+    <preference name="VIVO_API_KEY" default="VIVO_API_KEY" />
+    <preference name="VIVO_API_ID" default="VIVO_API_ID" />
+
     <!-- ios -->
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
@@ -65,17 +71,17 @@
             </receiver>
 
             <!-- 【重要】 请将YOUR_ACCESS_ID修改为APP的appKey -->
-            <meta-data android:name="com.alibaba.app.appkey" android:value="YOUR_APP_KEY"/>
+            <meta-data android:name="com.alibaba.app.appkey" android:value="$APP_KEY"/>
             <!-- 【重要】 请将YOUR_APP_SECRET修改为APP的appSecret -->
-            <meta-data android:name="com.alibaba.app.appsecret" android:value="YOUR_APP_SECRET"/>
+            <meta-data android:name="com.alibaba.app.appsecret" android:value="$APP_SECRET"/>
 
             <!-- 请填写你自己华为平台上注册的appid -->
-            <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=xxxx" />
+            <meta-data android:name="com.huawei.hms.client.appid" android:value="$HUAWEI_APP_ID" />
 
             <!-- 请填写您自己的vivo平台上的appKey -->
-            <meta-data android:name="com.vivo.push.api_key" android:value="xxxxxxxxxxxxxxxxxxx" />
+            <meta-data android:name="com.vivo.push.api_key" android:value="$VIVO_API_KEY" />
             <!-- 请填写您自己的vivo平台上的appId -->
-            <meta-data android:name="com.vivo.push.app_id" android:value="xxxx" />
+            <meta-data android:name="com.vivo.push.app_id" android:value="$VIVO_API_ID" />
         </config-file>
 
         <source-file src="src/android/AliPush.java" target-dir="src/org/apache/cordova/alipush/" />
