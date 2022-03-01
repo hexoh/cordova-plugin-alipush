@@ -44,6 +44,17 @@
             </feature>
         </config-file>
         <source-file src="src/ios/AliPush.m" />
+
+        <!-- use Cocoapods tool -->
+        <podspec>
+            <config>
+              <source url="https://github.com/CocoaPods/Specs.git" />
+              <source url="https://github.com/aliyun/aliyun-specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+              <pod name="AlicloudPush" spec="~> 1.9.9" />
+            </pods>
+          </podspec>
     </platform>
 
     <!-- android -->
@@ -84,8 +95,11 @@
             <meta-data android:name="com.vivo.push.app_id" android:value="$VIVO_API_ID" />
         </config-file>
 
+        <!-- source -->
         <source-file src="src/android/AliPush.java" target-dir="src/org/apache/cordova/alipush/" />
         <source-file src="src/android/AliPushReceiver.java" target-dir="src/org/apache/cordova/alipush/" />
+
+        <!-- framework: add gradle file -->
         <framework src="src/android/build-alipush.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
