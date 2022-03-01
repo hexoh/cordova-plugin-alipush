@@ -54,7 +54,7 @@
             <pods use-frameworks="true">
               <pod name="AlicloudPush" spec="~> 1.9.9" />
             </pods>
-          </podspec>
+        </podspec>
     </platform>
 
     <!-- android -->
