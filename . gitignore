@@ -1,7 +1,4 @@
-# .gitignore_global
-####################################
-######## OS generated files ########
-####################################
+# OS generated files #
 .DS_Store
 .DS_Store?
 *.swp
@@ -11,9 +8,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-####################################
-############# packages #############
-####################################
+
+# packages #
 *.7z  
 *.dmg
 *.gz
