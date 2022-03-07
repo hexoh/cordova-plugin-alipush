@@ -40,10 +40,13 @@
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="AliPush">
-                <param name="ios-package" value="AliPush" />
+                <param name="ios-package" value="CDVAliPush" />
             </feature>
         </config-file>
-        <source-file src="src/ios/AliPush.m" />
+        <source-file src="src/ios/CDVAliPush.h" />
+        <source-file src="src/ios/CDVAliPush.m" />
+        <source-file src="src/ios/AliPushManage.h" />
+        <source-file src="src/ios/AliPushManage.m" />
 
         <!-- use Cocoapods tool -->
         <podspec>
