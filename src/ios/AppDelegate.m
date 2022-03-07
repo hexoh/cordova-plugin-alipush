@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import <CloudPushSDK/CloudPushSDK.h>
+#import "AliPushManage.h"
 
 // ios 10 notifiation
 #import <UserNotifications/UserNotifications.h>
@@ -158,7 +159,7 @@
     // 通知角标数清0
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     // 同步角标数到服务端
-    [self syncBadgeNum:0];
+    [AliPushManage syncBadgeNum:0];
     // 通知打开回执上报
     [CloudPushSDK sendNotificationAck:userInfo];
     NSLog(@"Notification, date: %@, title: %@, subtitle: %@, body: %@, badge: %d, extras: %@.", noticeDate, title, subtitle, body, badge, extras);
@@ -253,7 +254,7 @@
     // iOS badge 清0
     application.applicationIconBadgeNumber = 0;
     // 同步通知角标数到服务端
-    [self syncBadgeNum:0];
+    [AliPushManage syncBadgeNum:0];
     // 通知打开回执上报
     // [CloudPushSDK handleReceiveRemoteNotification:userInfo];(Deprecated from v1.8.1)
     [CloudPushSDK sendNotificationAck:userInfo];
@@ -291,20 +292,6 @@
     NSString *title = [[NSString alloc] initWithData:message.title encoding:NSUTF8StringEncoding];
     NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
     NSLog(@"Receive message title: %@, content: %@.", title, body);
-}
-
-
-/// 同步角标到阿里推送服务器
-/// @param badgeNum 角标数
-- (void)syncBadgeNum:(NSUInteger)badgeNum
-{
-    [CloudPushSDK syncBadgeNum:badgeNum withCallback:^(CloudPushCallbackResult *res) {
-        if (res.success) {
-            NSLog(@"Sync badge num: [%lu] success.", (unsigned long)badgeNum);
-        } else {
-            NSLog(@"Sync badge num: [%lu] failed, error: %@", (unsigned long)badgeNum, res.error);
-        }
-    }];
 }
 
 @end
