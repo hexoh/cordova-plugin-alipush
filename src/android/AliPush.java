@@ -2,6 +2,7 @@ package org.apache.cordova.alipush;
 
 import android.util.Log;
 
+import com.alibaba.sdk.android.ams.common.util.StringUtil;
 import com.alibaba.sdk.android.push.CloudPushService;
 import com.alibaba.sdk.android.push.CommonCallback;
 import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory;
@@ -29,6 +30,9 @@ public class AliPush extends CordovaPlugin {
     } else if (action.equals("unbindAccount")) {
       this.unbindAccount(callbackContext);
       return true;
+    } else if (action.equals("getDeviceId")) {
+      this.getDeviceId(callbackContext);
+      return true;
     }
     return false;
   }
@@ -36,7 +40,7 @@ public class AliPush extends CordovaPlugin {
   /**
    * bind account 绑定账号
    * 将应用内账号和推送通道相关联，可以实现按账号的定点消息推送
-   * @param account account 账号
+   * @param account         account 账号
    * @param callbackContext callbackContext 回调Context
    */
   private void bindAccount(String account, CallbackContext callbackContext) {
@@ -90,6 +94,28 @@ public class AliPush extends CordovaPlugin {
             callbackContext.error("unbindAccount failed: " + "errorCode: " + errorCode + ", errorMsg:" + errorMsg);
           }
         });
+      }
+    });
+  }
+
+  /**
+   * get deviceId 获取设备唯一标识
+   * 获取设备唯一标识，指定设备推送时需要。
+   * @param callbackContext callbackContext 回调Context
+   */
+  private void getDeviceId(CallbackContext callbackContext) {
+    Log.d(AliPush_TAG, "start getDeviceId...");
+    cordova.getThreadPool().execute(new Runnable() {
+      @Override
+      public void run() {
+        String deviceId = mPushService.getDeviceId();
+        if (!StringUtil.isEmpty(deviceId)) {
+          Log.d(AliPush_TAG, "getDeviceId success: " + deviceId);
+          callbackContext.success(deviceId);
+        } else {
+          Log.d(AliPush_TAG, "getDeviceId failed: " + deviceId);
+          callbackContext.error(deviceId);
+        }
       }
     });
   }
