@@ -26,7 +26,11 @@
 
 /// 绑定账号
 /// @param command 参数
-- (void)bindAccount:(CDVInvokedUrlCommand*)command;
+- (void) bindAccount:(CDVInvokedUrlCommand *)command;
+
+- (void) unbindAccount:(CDVInvokedUrlCommand *)command;
+
+- (void) getDeviceId:(CDVInvokedUrlCommand *)command;
 
 @end
 
